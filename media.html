@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+    <style>
+        .PaintCalculetor{
+            
+            width: 100%;
+            height: 80vh;
+            margin-top: 20px;
+            
+        
+        }
+        .paintbox{
+           
+            height: 100%;
+            position: fixed;
+          
+        }
+        
+        .lefthedingPain{
+          color: var(--Neutral-Neutral-700, #374151);
+        font-family: "Red Hat Display";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 133.333% */
+        text-transform: capitalize;
+        }
+        .addFurniturebtn{
+          background: var(--Button-Gradient, linear-gradient(90deg, #AC5821 0%, #E1722A 100%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        border: none;
+        border-radius: 18px;
+        border: 1px solid var(--Button-Gradient, #AC5821);
+        
+        }
+        .itomlistBtnCal{
+          border-radius: 8px;
+        border: 1px solid #B15812;
+        background: var(--Orange-0, #FFFAF5);
+        width: 10%;
+        text-align: center;
+        }
+        .productitom{
+          
+        text-decoration: none;
+        color: var(--Neutral-Neutral-700, #374151);
+        
+        /* Body/12px: Regular */
+        font-family: "Red Hat Display";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px; /* 166.667% */
+        }
+        .calculetoeWrapper{
+            
+            border-radius: 16px;
+        border: 1px solid #E5E7EB;
+        background: var(--Neutral-Neutral-0, #FFF);
+        margin: 15px;
+        }
+        .productbutton {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 10px; /* Add gap between anchor tags */
+                    list-style: none; /* Remove default list styling */
+                    padding-left: 15px; /* Remove default padding */
+                }
+        
+                
+               
+          /* Custom CSS for input fields */
+        
+               .placeholder-left{
+          outline: none;
+          border: none;
+          border-bottom: 1px solid #DCDCDC;
+          color: var(--Neutral-Neutral-300, #D1D5DB);
+        font-family: "Red Hat Display";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 171.429% */
+               }
+          .placeholder-right {
+            color: var(--Neutral-Neutral-300, #D1D5DB);
+        font-family: "Red Hat Display";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 171.429% */
+            margin-left: -40px;
+          }
+          .furniturehead{
+            margin-top: 20px;
+            color: var(--Neutral-Neutral-700, #374151);
+        font-family: "Red Hat Display";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 171.429% */
+        text-transform: capitalize;
+          }
+          .textDropdown{
+            color: var(--Neutral-Neutral-700, #374151);
+        font-family: "Red Hat Display";
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px; /* 171.429% */
+        text-transform: capitalize;
+          }
+          /* dropdown ======================================*/
+          .paintselectDropdown{
+         color: #C0C0C0;
+         border: none;
+         border-bottom: 1px solid #DCDCDC;
+         outline: none;
+          }
+        
+          /* end dropdown========================== */
+        
+          /* ===============total amount ===========row */
+          .totalAmtCost{
+            border-radius: 16px;
+        border: 1px solid var(--Orange-100, #F7C48D);
+        background: var(--Neutral-Neutral-0, #FFF);
+        margin: 16px;
+          }
+          .textTotalPaint{
+            color: var(--Neutral-Neutral-700, #374151);
+        font-family: "Red Hat Display";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px; /* 137.5% */
+          }
+          .AmountTotalPaint{
+            color: var(--Orange-300, #B96E1D);
+        font-family: "Red Hat Display";
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 26px; /* 130% */
+          }
+          /* end box total amount=============================== */
+          /* calculetbtn and reset button */ 
+            .twobuttonContainer {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+          
+        
+          .calculetbtn{
+            border-radius: 4px;
+        background: var(--Button-Gradient, linear-gradient(90deg, #AC5821 0%, #E1722A 100%));
+        outline: none;
+        border: none;
+        /* overflow: hidden; */
+        color: var(--Neutral-Neutral-0, #FFF);
+        text-align: center;
+        /* text-overflow: ellipsis; */
+        
+        /* CTA/12px: Medium */
+        font-family: "Red Hat Display";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; /* 166.667% */
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        height: 30px;
+          }
+          .resetbtncalculetor{
+            border-radius: 4px;
+        border: 1px solid var(--Button-Gradient, #AC5821);
+        background: var(--Neutral-Neutral-0, #FFF);
+        margin-left: 10px;
+        width: 20%;
+        height: 30px;
+        overflow: hidden;
+        text-align: center;
+        text-overflow: ellipsis;
+        
+        /* CTA/12px: Medium */
+        font-family: "Red Hat Display";
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; /* 166.667% */
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        background: var(--Button-Gradient, linear-gradient(90deg, #AC5821 0%, #E1722A 100%));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+          }
+
+          /* Adjustments for mobile screens */
+    @media (max-width: 767px) {
+        .input-container .col {
+            flex: 0 0 100%; /* Make each column take full width */
+            max-width: 200%; /* Ensure columns don't exceed container width */
+            margin-bottom: 10px; /* Add some spacing between input fields */
+            
+        }
+        .calculetoeWrapper {
+    
+               margin: auto;
+             width: 90%;
+               }
+               .placeholder-left{
+                width: 100%;
+                margin-top: 10px;
+               }
+               .totalAmtCost {
+    
+                  margin: 0;
+                  }
+                  .calculetbtn {
+                    width: 45%;
+                }
+                .resetbtncalculetor{
+                    width: 45%;
+                }
+                .itomlistBtnCal {
+    
+              /* width: 40%; */
+              /* overflow: hidden; */
+    
+               }
+               .productbutton {
+            max-width: 100%; /* Ensure container takes full width */
+            overflow-x: scroll; /* Add scrollbar */
+            -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+        }
+               
+
+    }
+        </style>
+
+<body>
+
+    <section class="PaintCalculetor">
+        <div class="container paintbox">
+            <div class="row">
+                <div class="col-md-7 calculetoeWrapper">
+                    <!-- first row -->
+                    <div class="row mt-3">
+                        <div class="col lefthedingPain">Paint Calculator</div>
+                        <div class="col text-end"><button class="addFurniturebtn">Add Furniture 
+                          <img src="./Images/+.png"/>
+                        </button>
+                        </div>
+                    </div>
+                   <!-- first row end -->
+                   <!-- 2nd row button -->
+                   <div class="row mt-4">
+                    <ul class="productbutton">
+                        <li class="itomlistBtnCal"><a href="#" class="productitom">cupboard</a></li>
+                        <li  class="itomlistBtnCal"><a href="" class="productitom">cupboard</a></li>
+                        <li  class="itomlistBtnCal"><a href="#" class="productitom">cupboard</a></li>
+                        <li  class="itomlistBtnCal"><a href="#"class="productitom">cupboard</a></li>
+                        <li  class="itomlistBtnCal"><a href="#"class="productitom">cupboard</a></li>
+                        <li  class="itomlistBtnCal"><a href="#"class="productitom">cupboard</a></li>
+                        <li  class="itomlistBtnCal"><a href="#"class="productitom">cupboard</a></li>
+                    </ul>
+                   </div>
+                   <!-- end second row -->
+                   <div class="row">
+                     <!-- heading -->
+                   <h5 class="furniturehead">Furniture Details</h5>
+                   </div>
+                  
+                   <!-- input lenth meter width -->
+                   <div class="row input-container mt-4 ">
+
+                      <div class="col-md-4 ">
+                        <input type="number" placeholder="Length" class="placeholder-left" >
+                        <span class="placeholder-right">mtr</span>
+                      </div>
+                      <div class="col-md-4">
+                        <input type="number" placeholder="Length" class="placeholder-left">
+                        <span class="placeholder-right">mtr</span>
+                      </div>
+                      <div class="col-md-4">
+                        <input type="number" placeholder="Length" class="placeholder-left">
+                        <span class="placeholder-right">mtr</span>
+                      </div>  
+                   </div>
+                    <!-- end input with length -->
+                    <div class="row">
+                        <div class="row mt-4">
+                            <p class="textDropdown">Select the Products you want to apply</p>
+                        </div>
+                        <!-- dropdown -->
+                        <div class="row mt-4 p-3">
+                            <select class="paintselectDropdown">
+                                <!-- <img src="./Images/iconamoon_arrow-up-2-light.png"> -->
+                                <option>Allwood Italian PU Clear Gloss</option>
+                            </select>
+                        </div>
+                        <!-- dropdownend -->
+                    </div>
+                    
+               <div class="row mt-5  totalAmtCost">
+                <div class="row pt-3" >
+                <div class="col textTotalPaint"><span>Total Estimated Paint:</span></div>
+                <div class="col text-end AmountTotalPaint">
+                    <span>30 L - 40L</span></div>
+            </div>
+                <div class="row pb-3 mt-3">
+                    <div class="col textTotalPaint">Total Estimated Cost :</div>
+                    <div class="col text-end AmountTotalPaint">
+                      <span>₹3,000</span>
+                      <span>-</span>
+                      <span>₹5,000</span>
+                    </div>
+                </div>
+               </div>
+               <div class="row mt-5 pb-3 twobuttonContainer">
+                <div class="calculateBtnContainer"><button class="calculetbtn">calculet now</button>
+                    <button class="resetbtncalculetor">reset</button>
+                </div>
+                    <!-- <div class="resetBtnContainer"><button class="resetbtncalculetor">reset</button></div> -->
+                    
+                
+               
+               </div>
+                </div>
+
+
+
+                <!-- card section -->
+                <div class="col-md-4">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
